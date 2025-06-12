@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BANDAR CARBON CONCEPT</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Styles for Carbon Package page */
+    .carbon-package .navbar {
+      background-color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .carbon-package .navbar .brand {
+      font-size: 20px;
+      font-weight: bold;
+      color: #d32f2f;
+    }
+
+    .carbon-package .navbar .nav-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #222;
+      font-weight: normal;
+    }
+
+    .carbon-package .navbar .nav-links a.active,
+    .carbon-package .navbar .nav-links a:hover {
+      color: #d32f2f;
+      font-weight: bold;
+    }
+
+    .carbon-package header {
+      text-align: center;
+      padding: 40px 20px 10px;
+    }
+
+    .carbon-package header h1 {
+      color: #d32f2f;
+      margin-bottom: 5px;
+    }
+
+    .carbon-package .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .carbon-package .product-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 250px;
+      margin: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .carbon-package .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .carbon-package .product-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .carbon-package .product-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .carbon-package .product-price {
+      color: #d32f2f;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    /* Styles for Gallery Page */
+    #gallery-page {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    #gallery-page .navbar {
+      background-color: #fff;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 40px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    #gallery-page .navbar h1 {
+      color: #c0392b;
+      font-size: 20px;
+    }
+
+    #gallery-page .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    #gallery-page .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+    }
+
+    #gallery-page .nav-links a.active,
+    #gallery-page .nav-links a:hover {
+      color: #c0392b;
+      font-weight: bold;
+    }
+
+    #gallery-page .container {
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    #gallery-page h2 {
+      color: #c0392b;
+      margin-top: 40px;
+    }
+
+    #gallery-page img {
+      width: 100%;
+      max-width: 500px;
+      margin: 15px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #gallery-page .jenis-carbon {
+      margin-top: 40px;
+    }
+
+    #gallery-page .carbon-item {
+      margin-bottom: 50px;
+    }
+
+    /* Styles for About Us Page */
+    #about-page {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+
+    #about-page header {
+      background: #fff;
+      padding: 20px;
+      border-bottom: 2px solid #e0e0e0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #about-page .logo {
+      color: red;
+      font-weight: bold;
+      font-size: 22px;
+      padding-left: 20px;
+    }
+
+    #about-page nav a {
+      text-decoration: none;
+      margin: 0 15px;
+      color: #111;
+      font-size: 16px;
+    }
+
+    #about-page nav a:hover,
+    #about-page nav a.active {
+      color: red;
+      font-weight: bold;
+    }
+
+    #about-page .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    #about-page .section.bg-light {
+      background-color: #f5f6f8;
+    }
+
+    #about-page .section h1 {
+      font-size: 28px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    #about-page .section p {
+      font-size: 16px;
+      color: #555;
+      max-width: 700px;
+      margin: 20px auto 0;
+      line-height: 1.6;
+    }
+
+    #about-page .team {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    #about-page .team-member {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+      width: 250px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    #about-page .team-member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid #ccc;
+    }
+
+    #about-page .team-member h3 {
+      margin: 10px 0 5px;
+      color: #222;
+    }
+
+    #about-page .team-member p {
+      margin: 0;
+      color: #666;
+      font-size: 14px;
+    }
+
+    #about-page footer {
+      background-color: #1e2732;
+      color: #fff;
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    #about-page .footer-section {
+      width: 45%;
+      min-width: 250px;
+      margin-bottom: 20px;
+    }
+
+    #about-page .footer-section h3 {
+      margin-bottom: 15px;
+    }
+
+    #about-page .footer-section p,
+    #about-page .footer-section a {
+      color: #ccc;
+      font-size: 14px;
+      line-height: 1.6;
+      text-decoration: none;
+    }
+
+    #about-page .footer-bottom {
+      text-align: center;
+      color: #aaa;
+      font-size: 12px;
+      padding-top: 10px;
+      border-top: 1px solid #444;
+      margin-top: 20px;
+      width: 100%;
+    }
+    
+    /* Checkout Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+    }
+    
+    .modal-content {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 8px;
+    }
+    
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .close:hover {
+      color: black;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    .form-group input, 
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    
+    .checkout-btn {
+      background-color: #d32f2f;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    .checkout-btn:hover {
+      background-color: #b71c1c;
+    }
+    
+    /* Contact Page Styles */
+    #contact-page {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    
+    #contact-page .navbar {
+      background-color: #fff;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 40px;
+      border-bottom: 1px solid #ccc;
+    }
+    
+    #contact-page .navbar h1 {
+      color: #c0392b;
+      font-size: 20px;
+    }
+    
+    #contact-page .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    
+    #contact-page .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+    }
+    
+    #contact-page .nav-links a.active,
+    #contact-page .nav-links a:hover {
+      color: #c0392b;
+      font-weight: bold;
+    }
+    
+    #contact-page .container {
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    
+    #contact-page h2 {
+      color: #c0392b;
+      margin-bottom: 20px;
+    }
+    
+    #contact-page .contact-form {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    #contact-page .form-group {
+      margin-bottom: 20px;
+    }
+    
+    #contact-page .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    
+    #contact-page .form-group input,
+    #contact-page .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    
+    #contact-page .form-group textarea {
+      height: 150px;
+    }
+    
+    #contact-page .submit-btn {
+      background-color: #c0392b;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    #contact-page .submit-btn:hover {
+      background-color: #a5281b;
+    }
+    
+    #contact-page .contact-info {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    
+    #contact-page .info-card {
+      flex: 1;
+      min-width: 250px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    #contact-page .info-card h3 {
+      color: #c0392b;
+      margin-bottom: 15px;
+    }
+    
+    #contact-page .info-card p {
+      margin-bottom: 10px;
+    }
+    
+    #contact-page .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+    
+    #contact-page .social-links a {
+      color: #c0392b;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Home Page -->
+  <div id="home-page">
+    <div class="bg-white text-gray-800">
+      <!-- Navbar -->
+      <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+          <h1 class="text-2xl font-bold text-red-600">BANDAR CARBON CONCEPT</h1>
+          <nav class="space-x-4">
+            <a href="#" class="hover:text-red-600">Beranda</a>
+            <a href="#shop-page" class="hover:text-red-600">Toko</a>
+            <a href="#carbon-package" class="hover:text-red-600">Paket Carbon</a>
+            <a href="#gallery-page" class="hover:text-red-600">Galery Carbon</a>
+            <a href="#about-page" class="hover:text-red-600">Tentang Kami</a>
+            <a href="#contact-page" class="hover:text-red-600">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="bg-gray-100 py-12 text-center">
+        <h2 class="text-3xl font-bold mb-4">BANDAR CARBON CONCEPT</h2>
+        <p class="max-w-2xl mx-auto text-gray-600">BANDAR CARBON CO adalah produsen bodykit karbon terkemuka di dunia yang berkantor pusat di Jakarta, Indonesia. Kami membuat bodykit dari serat karbon asli untuk mengubah tampilan kendaraan Anda menjadi tampilan yang benar-benar baru.</p>
+      </section>
+
+      <!-- Shop CTA -->
+      <section class="bg-white py-12 text-center">
+        <h2 class="text-2xl font-bold mb-2">TOKO</h2>
+        <p class="text-gray-600 mb-6">Produsen bodykit karbon terkemuka di INDONESIA</p>
+        <a href="#shop-page" class="bg-red-600 text-white px-6 py-3 rounded hover:bg-red-700">All Product</a>
+      </section>
+
+      <!-- Inspiration Project -->
+      <section class="bg-gray-50 py-12 text-center">
+        <h2 class="text-xl font-semibold mb-2">Butuh inspirasi untuk Part Otomotif Anda?</h2>
+        <p class="text-gray-600 mb-6">Mungkin menjelajahi proyek terbaru kami untuk proyek masa depan kami bersama Anda</p>
+        <a href="#" class="bg-gray-800 text-white px-6 py-2 rounded hover:bg-gray-700">See more</a>
+      </section>
+
+      <!-- Blog Section -->
+      <section class="bg-white py-12 px-4">
+        <h2 class="text-2xl font-bold text-center mb-8">Latest From Our Blog</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-gray-100 p-4 rounded shadow">
+            <h3 class="font-semibold mb-2">Carbon Parts Untuk Yamaha N-Max 155 Connected Sudah Ready Guys!</h3>
+            <p class="text-sm text-gray-500 mb-4">Jun O1, 2025</p>
+            <img src="NMAX%20CARBON.jpg" alt="NMAX Carbon" class="mb-4 w-full">
+            <a href="#" class="text-red-600 hover:underline">Read more</a>
+          </div>
+          <div class="bg-gray-100 p-4 rounded shadow">
+            <h3 class="font-semibold mb-2">Lapis Velg Motor Standard jadi Carbon? Tambah Keren!</h3>
+            <p class="text-sm text-gray-500 mb-4">Jun 01, 2025</p>
+            <img src="vlg%20carbon.jpeg" alt="Velg Carbon" class="mb-4 w-full">
+            <a href="#" class="text-red-600 hover:underline">Read more</a>
+          </div>
+          <div class="bg-gray-100 p-4 rounded shadow">
+            <h3 class="font-semibold mb-2">Pipe Protector Carbon, Bukan Cuma Sekedar Hiasan!</h3>
+            <p class="text-sm text-gray-500 mb-4">Jul 25, 2024</p>
+            <img src="pipe.jpeg" alt="Pipe Protector" class="mb-4 w-full">
+            <a href="#" class="text-red-600 hover:underline">Read more</a>
+          </div>
+        </div>
+        <div class="text-center mt-8">
+          <a href="#" class="text-gray-700 underline hover:text-red-600">Read More</a>
+        </div>
+      </section>
+
+      <!-- Become a Dealer -->
+      <section class="bg-red-600 text-white py-12 text-center">
+        <h2 class="text-xl font-semibold mb-2">Ingin menjadi dealer kami?</h2>
+        <p class="max-w-2xl mx-auto mb-4">Kami selalu tertarik untuk mencari mitra bisnis baru untuk menjual dan mendistribusikan suku cadang serat karbon kami. Kami telah menyempurnakan produk kami dengan kualitas terbaik, dan kami berencana untuk terus melakukannya selama bertahun-tahun mendatang. Jika Anda tertarik untuk menjual produk kami, silakan hubungi kami.</p>
+        <a href="#contact-page" class="bg-white text-red-600 px-6 py-3 rounded hover:bg-gray-100">Contact Us</a>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <h3 class="font-bold text-lg mb-2">About Us</h3>
+              <p>Kabon adalah produsen bodykit karbon terkemuka di dunia yang berkantor pusat di Jakarta, Indonesia. Kami membuat bodykit dari serat karbon asli. Bodykit kami pasti akan mengubah tampilan kendaraan Anda menjadi tampilan baru yang lebih modern.</p>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg mb-2">Quick Links</h3>
+              <ul class="space-y-1">
+                <li><a href="#" class="hover:underline">Beranda</a></li>
+                <li><a href="#shop-page" class="hover:underline">Toko</a></li>
+                <li><a href="#carbon-package" class="hover:underline">Paket Carbon</a></li>
+                <li><a href="#gallery-page" class="hover:underline">Galery Carbon</a></li>
+                <li><a href="#about-page" class="hover:underline">Tentang Kami</a></li>
+                <li><a href="#contact-page" class="hover:underline">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="text-center mt-6 text-xs text-gray-400">
+            Copyright ©2025 BANDAR CARBON CONCEPT | Made by Bikin.Website
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Shop Page -->
+  <div id="shop-page" style="display: none;">
+    <div class="bg-white text-gray-800">
+      <!-- Navbar -->
+      <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+          <h1 class="text-2xl font-bold text-red-600">BANDAR CARBON CONCEPT</h1>
+          <nav class="space-x-4">
+            <a href="#" class="hover:text-red-600">Beranda</a>
+            <a href="#shop-page" class="text-red-600 font-bold">Toko</a>
+            <a href="#carbon-package" class="hover:text-red-600">Paket Carbon</a>
+            <a href="#gallery-page" class="hover:text-red-600">Galery Carbon</a>
+            <a href="#about-page" class="hover:text-red-600">Tentang Kami</a>
+            <a href="#contact-page" class="hover:text-red-600">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Shop Banner -->
+      <section class="relative">
+        <img src="https://kabon.id/wp-content/uploads/2023/06/Kabon-Header-2-scaled.jpg" alt="Shop Banner" class="w-full h-64 object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <h2 class="text-white text-5xl font-bold">TOKO</h2>
+        </div>
+      </section>
+
+      <!-- Filter + Product Grid -->
+      <section class="container mx-auto px-4 py-12">
+        <div class="flex flex-col md:flex-row gap-8">
+          <!-- Sidebar Filter -->
+          <aside class="w-full md:w-1/4">
+            <div class="mb-4">
+              <label class="block text-sm font-bold mb-2">Search</label>
+              <input type="text" placeholder="Search" class="w-full px-3 py-2 border rounded">
+            </div>
+            <div>
+              <h3 class="font-semibold mb-2">Brand</h3>
+              <ul class="space-y-1 text-sm">
+                <li><input type="checkbox"> Shop By Bike (353)</li>
+                <li class="ml-4"><input type="checkbox"> L300 (35)</li>
+                <li class="ml-8"><input type="checkbox"> MOBILIO (35)</li>
+                <li class="ml-4"><input type="checkbox"> Honda (38)</li>
+                <li class="ml-8"><input type="checkbox"> INOVA 150 (5)</li>
+                <li class="ml-8"><input type="checkbox"> CB650R (2)</li>
+                <li class="ml-8"><input type="checkbox"> CBR 1000RR (3)</li>
+                <li class="ml-8"><input type="checkbox"> CBR 250RR (29)</li>
+                <li class="ml-8"><input type="checkbox"> NSR 150SP (1)</li>
+                <li class="ml-4"><input type="checkbox"> Kawasaki (159)</li>
+                <li class="ml-8"><input type="checkbox"> ER-6 N/F (2)</li>
+                <li class="ml-8"><input type="checkbox"> H2 (24)</li>
+                <li class="ml-8"><input type="checkbox"> Ninja SS/ 400 2018 (27)</li>
+                <li class="ml-8"><input type="checkbox"> Ninja RR / 250Fi (14)</li>
+                <li class="ml-8"><input type="checkbox"> F1ZR  (8)</li>
+                <li class="ml-8"><input type="checkbox"> R15 (10)</li>
+                <li class="ml-8"><input type="checkbox"> SUPRA 125  (4)</li>
+                <li class="ml-8"><input type="checkbox"> MIO (11)</li>
+                <li class="ml-8"><input type="checkbox"> SCHOPPY (31)</li>
+                <li class="ml-8"><input type="checkbox"> VARIO (34)</li>
+                <li class="ml-8"><input type="checkbox"> ZX-6R (12)</li>
+                <li class="ml-4"><input type="checkbox"> Yamaha (126)</li>
+                <li class="ml-8"><input type="checkbox"> Aerox 155 (19)</li>
+                <li class="ml-8"><input type="checkbox"> Nmax 155 (25)</li>
+                <li class="ml-8"><input type="checkbox"> X-Max 250 Connected (12)</li>
+                <li class="ml-8"><input type="checkbox"> Xmax 250 (33)</li>
+                <li class="ml-8"><input type="checkbox"> YZF R1/R1M (22)</li>
+                <li class="ml-8"><input type="checkbox"> YZF R15 (6)</li>
+                <li class="ml-8"><input type="checkbox"> YZF R25 (12)</li>
+                <li class="ml-8"><input type="checkbox"> YZF R6 (8)</li>
+              </ul>
+            </div>
+          </aside>
+
+          <!-- Product Listing -->
+          <main class="w-full md:w-3/4">
+            <div class="flex justify-between items-center mb-6">
+              <p>Showing 1–12 of 357 results</p>
+              <select class="border px-3 py-2 rounded">
+                <option>Sort by latest</option>
+                <option>Sort by price: low to high</option>
+                <option>Sort by price: high to low</option>
+              </select>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="space-y-6">
+              <!-- Row 1 -->
+              <div class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4">
+                <div class="flex border rounded p-4 w-full lg:w-1/3">
+                  <img src="cover%20helm%20carbon.jpg" alt="Product" class="w-32 h-32 object-cover mr-4">
+                  <div>
+                    <h3 class="font-semibold">COVER HELM INK CARBON FORGET </h3>
+                    <p class="text-red-600">Rp300.000</p>
+                    <button class="bg-red-600 text-white px-4 py-1 rounded mt-2 checkout-btn" 
+                            data-name="COVER HELM INK CARBON FORGET" 
+                            data-price="300000">Beli Sekarang</button>
+                  </div>
+                </div>
+                <div class="flex border rounded p-4 w-full lg:w-1/3">
+                  <img src="cover%20knalpot%20carbon.jpg" alt="Product" class="w-32 h-32 object-cover mr-4">
+                  <div>
+                    <h3 class="font-semibold">COVER KNALPOT SCOOPY 2021 K0J  CARBON DIAMOND CUT</h3>
+                    <p class="text-red-600">Rp250.000</p>
+                    <button class="bg-red-600 text-white px-4 py-1 rounded mt-2 checkout-btn" 
+                            data-name="COVER KNALPOT SCOOPY 2021 K0J CARBON DIAMOND CUT" 
+                            data-price="250000">Beli Sekarang</button>
+                  </div>
+                </div>
+                <div class="flex border rounded p-4 w-full lg:w-1/3">
+                  <img src="cover%20setir%20l300%20carbon.jpg" alt="Product" class="w-32 h-32 object-cover mr-4">
+                  <div>
+                    <h3 class="font-semibold">COVER SETIR L300 CARBON DIAMOND CUT</h3>
+                    <p class="text-red-600">Rp250.000</p>
+                    <button class="bg-red-600 text-white px-4 py-1 rounded mt-2 checkout-btn" 
+                            data-name="COVER SETIR L300 CARBON DIAMOND CUT" 
+                            data-price="250000">Beli Sekarang</button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Row 2 -->
+              <div class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4">
+                <div class="flex border rounded p-4 w-full lg:w-1/3">
+                  <img src="spakbor%20f1zr%20carbon.jpg" alt="Product" class="w-32 h-32 object-cover mr-4">
+                  <div>
+                    <h3 class="font-semibold">SPAKBOR BELAKANG F1ZR CARBON DIAMOND CUT</h3>
+                    <p class="text-red-600">Rp400.000</p>
+                    <button class="bg-red-600 text-white px-4 py-1 rounded mt-2 checkout-btn" 
+                            data-name="SPAKBOR BELAKANG F1ZR CARBON DIAMOND CUT" 
+                            data-price="400000">Beli Sekarang</button>
+                  </div>
+                </div>
+                <div class="flex border rounded p-4 w-full lg:w-1/3">
+                  <img src="spakbor%20ninja%20carbon.jpg" alt="Product" class="w-32 h-32 object-cover mr-4">
+                  <div>
+                    <h3 class="font-semibold">SPAKBOR DEPAN NINJA SS CARBON DIAMOND CUT </h3>
+                    <p class="text-red-600">Rp450.000</p>
+                    <button class="bg-red-600 text-white px-4 py-1 rounded mt-2 checkout-btn" 
+                            data-name="SPAKBOR DEPAN NINJA SS CARBON DIAMOND CUT" 
+                            data-price="450000">Beli Sekarang</button>
+                  </div>
+                </div>
+                <div class="flex border rounded p-4 w-full lg:w-1/3">
+                  <img src="LEGSHIL%20F1ZR.jpg" alt="Product" class="w-32 h-32 object-cover mr-4">
+                  <div>
+                    <h3 class="font-semibold">LEGHSHIL F1ZR CARBON DIAMOND CUT</h3>
+                    <p class="text-red-600">Rp300.000</p>
+                    <button class="bg-red-600 text-white px-4 py-1 rounded mt-2 checkout-btn" 
+                            data-name="LEGHSHIL F1ZR CARBON DIAMOND CUT" 
+                            data-price="300000">Beli Sekarang</button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Row 3 -->
+              <div class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4">
+                <div class="flex border rounded p-4 w-full lg:w-1/3">
+                  <img src="cover%20cvt%20pcx%20160%20300.jpg" alt="Product" class="w-32 h-32 object-cover mr-4">
+                  <div>
+                    <h3 class="font-semibold">COVER CVT PCX 160 CARBON CEVLAR </h3>
+                    <p class="text-red-600">Rp300.000</p>
+                    <button class="bg-red-600 text-white px-4 py-1 rounded mt-2 checkout-btn" 
+                            data-name="COVER CVT PCX 160 CARBON CEVLAR" 
+                            data-price="300000">Beli Sekarang</button>
+                  </div>
+                </div>
+                <div class="flex border rounded p-4 w-full lg:w-1/3">
+                  <img src="cover%20spion%20inova.jpeg" alt="Product" class="w-32 h-32 object-cover mr-4">
+                  <div>
+                    <h3 class="font-semibold">COVER SPION INOVA REBON/VENTURER CARBON CEVLAR</h3>
+                    <p class="text-red-600">Rp400.000</p>
+                    <button class="bg-red-600 text-white px-4 py-1 rounded mt-2 checkout-btn" 
+                            data-name="COVER SPION INOVA REBON/VENTURER CARBON CEVLAR" 
+                            data-price="400000">Beli Sekarang</button>
+                  </div>
+                </div>
+                <div class="flex border rounded p-4 w-full lg:w-1/3">
+                  <img src="winglet%20r15%20carbon%20cevlar%20250.jpeg" alt="Product" class="w-32 h-32 object-cover mr-4">
+                  <div>
+                    <h3 class="font-semibold">WINGLHET R15 CARBON CEVLAR </h3>
+                    <p class="text-red-600">Rp250.000</p>
+                    <button class="bg-red-600 text-white px-4 py-1 rounded mt-2 checkout-btn" 
+                            data-name="WINGLHET R15 CARBON CEVLAR" 
+                            data-price="250000">Beli Sekarang</button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Row 4 -->
+              <div class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4">
+                <div class="flex border rounded p-4 w-full lg:w-1/3">
+                  <img src="paket%20carbon%20body%20%20kasr%20%20vario%20old%201.900.00.jpeg" alt="Product" class="w-32 h-32 object-cover mr-4">
+                  <div>
+                    <h3 class="font-semibold">PAKET CARBON CEVLAR BODY KASAR VARIO OLD </h3>
+                    <p class="text-red-600">Rp1.900.000</p>
+                    <button class="bg-red-600 text-white px-4 py-1 rounded mt-2 checkout-btn" 
+                            data-name="PAKET CARBON CEVLAR BODY KASAR VARIO OLD" 
+                            data-price="1900000">Beli Sekarang</button>
+                  </div>
+                </div>
+                <div class="flex border rounded p-4 w-full lg:w-1/3">
+                  <img src="Paket%20carbon%20body%20kasar%20F1ZR%201.900.00.jpeg" alt="Product" class="w-32 h-32 object-cover mr-4">
+                  <div>
+                    <h3 class="font-semibold">PAKET CARBON FORGET BODY KASAR F1ZR </h3>
+                    <p class="text-red-600">Rp1.900.000</p>
+                    <button class="bg-red-600 text-white px-4 py-1 rounded mt-2 checkout-btn" 
+                            data-name="PAKET CARBON FORGET BODY KASAR F1ZR" 
+                            data-price="1900000">Beli Sekarang</button>
+                  </div>
+                </div>
+                <div class="flex border rounded p-4 w-full lg:w-1/3">
+                  <img src="paket%20carbon%20body%20kasar%20mio%20smile%201.900.00.jpeg" alt="Product" class="w-32 h-32 object-cover mr-4">
+                  <div>
+                    <h3 class="font-semibold">PAKET CARBON BODY KASAR MIO SMILE </h3>
+                    <p class="text-red-600">Rp1.900.000</p>
+                    <button class="bg-red-600 text-white px-4 py-1 rounded mt-2 checkout-btn" 
+                            data-name="PAKET CARBON BODY KASAR MIO SMILE" 
+                            data-price="1900000">Beli Sekarang</button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Row 5 -->
+              <div class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4">
+                <div class="flex border rounded p-4 w-full lg:w-1/3">
+                  <img src="Paket%20carbon%20body%20komplit%20ful%20set%20Ninja%20SS%205.500.000.jpeg" alt="Product" class="w-32 h-32 object-cover mr-4">
+                  <div>
+                    <h3 class="font-semibold">PAKET KOMPLIT CARBON BODY NINJA SS</h3>
+                    <p class="text-red-600">Rp5.000.000</p>
+                    <button class="bg-red-600 text-white px-4 py-1 rounded mt-2 checkout-btn" 
+                            data-name="PAKET KOMPLIT CARBON BODY NINJA SS" 
+                            data-price="5000000">Beli Sekarang</button>
+                  </div>
+                </div>
+                <div class="flex border rounded p-4 w-full lg:w-1/3">
+                  <img src="Gril%20honda%20mobilio%202019%202.750.000.jpeg" alt="Product" class="w-32 h-32 object-cover mr-4">
+                  <div>
+                    <h3 class="font-semibold">GRIL HONDA MOBILIO 2019 CARBON CEVLAR</h3>
+                    <p class="text-red-600">Rp1.500.000</p>
+                    <button class="bg-red-600 text-white px-4 py-1 rounded mt-2 checkout-btn" 
+                            data-name="GRIL HONDA MOBILIO 2019 CARBON CEVLAR" 
+                            data-price="1500000">Beli Sekarang</button>
+                  </div>
+                </div>
+                <div class="flex border rounded p-4 w-full lg:w-1/3">
+                  <img src="tangki%20rx%20king%20carbon%20cevlar%20800.000.webp" alt="Product" class="w-32 h-32 object-cover mr-4">
+                  <div>
+                    <h3 class="font-semibold">TANGKI RX KING CARBON FORGET</h3>
+                    <p class="text-red-600">Rp1.000.000</p>
+                    <button class="bg-red-600 text-white px-4 py-1 rounded mt-2 checkout-btn" 
+                            data-name="TANGKI RX KING CARBON FORGET" 
+                            data-price="1000000">Beli Sekarang</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <h3 class="font-bold text-lg mb-2">About Us</h3>
+              <p>BANDAR CARBON CO adalah produsen bodykit karbon terkemuka di dunia yang berkantor pusat di Jakarta, Indonesia. Kami membuat bodykit dari serat karbon asli. Bodykit kami pasti akan mengubah tampilan kendaraan Anda menjadi tampilan baru yang lebih modern..</p>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg mb-2">Quick Links</h3>
+              <ul class="space-y-1">
+                <li><a href="#" class="hover:underline">Beranda</a></li>
+                <li><a href="#shop-page" class="hover:underline">Toko</a></li>
+                <li><a href="#carbon-package" class="hover:underline">Paket Carbon </a></li>
+                <li><a href="#gallery-page" class="hover:underline">Galery Carbon </a></li>
+                <li><a href="#about-page" class="hover:underline">Tentang kami</a></li>
+                <li><a href="#contact-page" class="hover:underline">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="text-center mt-6 text-xs text-gray-400">
+            Copyright ©2025 BANDAR CARBON CO | Made by Bikin.Website
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Carbon Package Page -->
+  <div id="carbon-package" style="display: none;">
+    <div class="carbon-package">
+      <!-- Menu Navigasi -->
+      <div class="navbar">
+        <div class="brand">BANDAR CARBON CONCEPT</div>
+        <div class="nav-links">
+          <a href="#">Beranda</a>
+          <a href="#shop-page">Toko</a>
+          <a href="#carbon-package" class="active">Paket Carbon</a>
+          <a href="#gallery-page">Galery Carbon</a>
+          <a href="#about-page">Tentang Kami</a>
+          <a href="#contact-page">Contact</a>
+        </div>
+      </div>
+
+      <!-- Judul Halaman -->
+      <header>
+        <h1>PAKET CARBON</h1>
+        <p>Temukan paket carbon terbaik untuk kendaraan Anda Dan Akan Mendapatkan Harga Yang Lebih Murah</p>
+      </header>
+
+      <!-- Produk -->
+      <div class="container">
+        <div class="product-card">
+          <img src="paket%20carbon%20body%20%20kasr%20%20vario%20old%201.900.00.jpeg" alt="Paket Carbon Interior">
+          <div class="product-title">PAKET CARBON CEVLAR VARIO OLD </div>
+          <div class="product-price">Rp 1.900.000</div>
+          <button class="bg-red-600 text-white px-4 py-1 rounded mt-2 checkout-btn" 
+                  data-name="PAKET CARBON CEVLAR VARIO OLD" 
+                  data-price="1900000">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+          <img src="Paket%20carbon%20body%20kasar%20F1ZR%201.900.00.jpeg" alt="Paket Carbon Eksterior">
+          <div class="product-title">PAKET CARBON FORGET BODY KASAR F1ZR</div>
+          <div class="product-price">Rp 1.900.000</div>
+          <button class="bg-red-600 text-white px-4 py-1 rounded mt-2 checkout-btn" 
+                  data-name="PAKET CARBON FORGET BODY KASAR F1ZR" 
+                  data-price="1900000">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+          <img src="Paket%20carbon%20body%20komplit%20ful%20set%20Ninja%20SS%205.500.000.jpeg" alt="Paket Full Carbon">
+          <div class="product-title">PAKET KOMPLIT CARBON BODY NINJA SS</div>
+          <div class="product-price">Rp 5.500.000</div>
+          <button class="bg-red-600 text-white px-4 py-1 rounded mt-2 checkout-btn" 
+                  data-name="PAKET KOMPLIT CARBON BODY NINJA SS" 
+                  data-price="5500000">Beli Sekarang</button>
+        </div>
+        
+        <div class="product-card">
+          <img src="paket%20carbon%20body%20kasar%20mio%20smile%201.900.00.jpeg" alt="Paket Full Carbon">
+          <div class="product-title">PAKET CARBON BODY KASAR MIO SMILE</div>
+          <div class="product-price">Rp 1.900.000</div>
+          <button class="bg-red-600 text-white px-4 py-1 rounded mt-2 checkout-btn" 
+                  data-name="PAKET CARBON BODY KASAR MIO SMILE" 
+                  data-price="1900000">Beli Sekarang</button>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <h3 class="font-bold text-lg mb-2">About Us</h3>
+              <p>BANDAR CARBON CO adalah produsen bodykit karbon terkemuka di dunia yang berkantor pusat di Jakarta, Indonesia. Kami membuat bodykit dari serat karbon asli. Bodykit kami pasti akan mengubah tampilan kendaraan Anda menjadi tampilan baru yang lebih modern.</p>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg mb-2">Quick Links</h3>
+              <ul class="space-y-1">
+                <li><a href="#" class="hover:underline">Beranda</a></li>
+                <li><a href="#shop-page" class="hover:underline">Toko</a></li>
+                <li><a href="#carbon-package" class="hover:underline">Paket Carbon</a></li>
+                <li><a href="#gallery-page" class="hover:underline">Galery Carbon</a></li>
+                <li><a href="#about-page" class="hover:underline">Tentang Kami</a></li>
+                <li><a href="#contact-page" class="hover:underline">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="text-center mt-6 text-xs text-gray-400">
+            Copyright ©2025 BANDAR CARBON CO | Made by Bikin.Website
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Gallery Page -->
+  <div id="gallery-page" style="display: none;">
+    <div id="gallery-page">
+      <!-- MENU -->
+      <div class="navbar">
+        <h1>BANDAR CARBON CONCEPT</h1>
+        <div class="nav-links">
+          <a href="#">Beranda</a>
+          <a href="#shop-page">Toko</a>
+          <a href="#carbon-package">Paket Carbon</a>
+          <a href="#gallery-page" class="active">Galery Carbon</a>
+          <a href="#about-page">Tentang Kami</a>
+          <a href="#contact-page">Contact</a>
+        </div>
+      </div>
+
+      <!-- ISI KONTEN -->
+      <div class="container">
+        <h2> Carbon</h2>
+        <p>
+          Carbon adalah unsur kimia penting dalam dunia industri dan otomotif. Dalam bentuk serat (carbon fiber), material ini digunakan karena kekuatannya yang sangat tinggi namun sangat ringan. Material carbon banyak digunakan dalam modifikasi mobil, motor, hingga barang-barang teknologi tinggi.
+        </p>
+
+        <div class="jenis-carbon">
+          <h2>Jenis-Jenis Carbon</h2>
+
+          <div class="carbon-item">
+            <h3>1. Carbon Forget </h3>
+            <p> Carbon Forged adalah jenis material serat karbon yang memiliki pola visual acak dan tidak teratur, menyerupai marmer atau pecahan serpihan. Tidak seperti serat karbon biasa yang memiliki pola tenunan teratur, Forged Carbon terbuat dari potongan-potongan kecil serat karbon yang dicampur dengan resin, kemudian dipadatkan melalui proses cetakan bertekanan tinggi. Dalam dunia skinning carbon—yaitu pelapisan permukaan komponen kendaraan dengan material karbon—Forged Carbon digunakan untuk memberikan tampilan eksklusif dan unik pada bagian-bagian kendaraan seperti cover spion, dashboard, atau panel pintu. Material ini tidak hanya menghadirkan estetika yang mewah, tetapi juga tetap ringan dan memiliki daya tahan yang baik terhadap panas serta cuaca. Karena tampilannya yang berbeda dan mewah, Forged Carbon sering digunakan pada kendaraan sport, supercar, atau produk modifikasi kelas premium.
+</p>
+            <img src="serat%20forget.jpeg" alt="Carbon Forget">
+          </div>
+
+          <div class="carbon-item">
+            <h3>2. Carbon Kevlar</h3>
+            <p>Carbon Kevlar dalam skining carbon adalah material komposit yang merupakan perpaduan antara serat karbon (carbon fiber) dan serat Kevlar (aramid fiber) yang digunakan untuk melapisi permukaan komponen kendaraan agar tampil lebih estetik dan memiliki ketahanan tinggi terhadap benturan serta gesekan. Material ini dikenal dengan motif anyaman unik berwarna kuning-hitam atau merah-hitam, dan sering diaplikasikan pada bagian seperti cover mesin, dashboard, tangki motor, hingga spion. Selain tampil eksklusif, Carbon Kevlar juga ringan dan fleksibel, sehingga memudahkan proses pelapisan pada permukaan yang kompleks atau melengkung.
+.</p>
+            <img src="serat%20kevlar.jpg" alt="Carbon Kevlar">
+          </div>
+
+          <div class="carbon-item">
+            <h3>3.Carbon Diamond Cut</h3>
+            <p>**Carbon Diamond Cut** dalam dunia *skinning carbon* adalah teknik pelapisan permukaan dengan serat karbon yang mengutamakan ketelitian dalam penataan pola serat agar membentuk motif menyerupai potongan berlian atau wajik. Teknik ini bukan hanya sekadar menempelkan lembaran serat karbon, tetapi melibatkan proses pemotongan pada sudut-sudut tertentu (biasanya 45 derajat) dan penyusunan lembaran secara simetris agar sambungan antar serat tampak rapi dan menyatu secara visual. Hasil akhirnya memberikan efek visual yang sangat estetis dan terkesan eksklusif, sehingga sering diaplikasikan pada bagian-bagian kendaraan yang menonjol secara visual, seperti dashboard, cover spion, konsol tengah, hingga bagian bodi motor atau mobil yang ingin diperindah.
+
+Proses diamond cut ini umumnya dilakukan secara manual oleh para profesional karena memerlukan ketelitian tinggi agar arah dan sudut serat presisi. Kesalahan kecil saja dapat merusak pola keseluruhan. Inilah yang menjadikan teknik ini lebih eksklusif dan bernilai seni tinggi dibanding metode pelapisan biasa. Selain memberikan tampilan mewah dan modern, carbon diamond cut juga menjadi simbol ketelitian dan kualitas dalam dunia modifikasi kendaraan. Dengan teknik ini, bagian yang dilapisi tidak hanya kuat dan ringan seperti karakteristik serat karbon pada umumnya, tetapi juga menjadi daya tarik visual yang menambah nilai estetika dan prestige bagi pemilik kendaraan.
+
+Apabila ingin ditampilkan dalam website atau brosur promosi modifikasi kendaraan, paragraf ini bisa disertai dengan gambar close-up hasil diamond cut agar pengunjung bisa melihat keindahan pola tersebut secara langsung.
+.</p>
+            <img src="serat%20diamond%20cut.webp" alt="Carbon diamond cut">
+          </div>
+
+          <div class="carbon-item">
+            <h3>4.Carbon Hexsagonal</h3>
+            <p>Carbon hexagonal pada skinning carbon adalah jenis pola visual berbentuk segienam menyerupai sarang lebah (honeycomb) yang digunakan untuk memberikan tampilan modern, futuristik, dan sporty pada permukaan kendaraan atau benda tertentu. Berbeda dengan carbon fiber asli yang digunakan untuk kekuatan struktural, carbon hexagonal biasanya diterapkan melalui metode skinning atau pelapisan permukaan menggunakan bahan seperti vinyl wrap, hydrographic printing, atau lembaran film sintetis. Tujuan utamanya adalah estetika, bukan kekuatan mekanis, sehingga banyak digunakan pada bagian luar motor, mobil, helm, hingga gadget untuk meningkatkan kesan premium tanpa menambah bobot atau biaya besar. Motif hexagonal ini menjadi pilihan populer di kalangan pecinta modifikasi karena memberikan tampilan unik dan berbeda dari pola serat karbon konvensional seperti twill atau diagonal, menjadikannya daya tarik tersendiri dalam dunia otomotif dan aksesoris personal.
+.</p>
+            <img src="serat%20hexsagonal.avif" alt="Carbon hexsagonal">
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <h3 class="font-bold text-lg mb-2">About Us</h3>
+              <p>BANDAR CARBON CO adalah produsen bodykit karbon terkemuka di dunia yang berkantor pusat di Jakarta, Indonesia. Kami membuat bodykit dari serat karbon asli. Bodykit kami pasti akan mengubah tampilan kendaraan Anda menjadi tampilan baru yang lebih modern.</p>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg mb-2">Quick Links</h3>
+              <ul class="space-y-1">
+                <li><a href="#" class="hover:underline">Beranda</a></li>
+                <li><a href="#shop-page" class="hover:underline">Toko</a></li>
+                <li><a href="#carbon-package" class="hover:underline">Paket Carbon</a></li>
+                <li><a href="#gallery-page" class="hover:underline">Galery Carbon</a></li>
+                <li><a href="#about-page" class="hover:underline">Tentang Kami</a></li>
+                <li><a href="#contact-page" class="hover:underline">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="text-center mt-6 text-xs text-gray-400">
+            Copyright ©2025 BANDAR CARBON CO | Made by Bikin.Website
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- About Us Page -->
+  <div id="about-page" style="display: none;">
+    <div id="about-page">
+      <header>
+        <div class="logo">BANDAR CARBON CONCEPT</div>
+        <nav>
+          <a href="#">Beranda</a>
+          <a href="#shop-page">Toko</a>
+          <a href="#carbon-package">Paket Carbon</a>
+          <a href="#gallery-page">Galery Carbon</a>
+          <a href="#about-page" class="active">Tentang Kami</a>
+          <a href="#contact-page">Contact</a>
+        </nav>
+      </header>
+
+      <section class="section bg-light">
+        <h1>CARBON SKINING</h1>
+        <p>
+          Kami adalah spesialis dalam proses pelapisan serat karbon (carbon skinning) berkualitas tinggi di Indonesia.
+          Dengan kantor pusat di Jakarta, tim kami memiliki pengalaman luas dalam mengubah tampilan kendaraan Anda
+          menjadi lebih premium dan eksklusif.
+        </p>
+      </section>
+
+      <section class="section">
+        <h1>VISI & MISI</h1>
+        <p>
+          <strong>Visi:</strong> Menjadi pelopor dalam teknologi pelapisan karbon dan modifikasi bodykit berkualitas di Asia Tenggara.<br><br>
+          <strong>Misi:</strong> Memberikan pelayanan terbaik, hasil finishing presisi, serta edukasi kepada pelanggan mengenai keunggulan carbon skinning.
+        </p>
+      </section>
+
+      <section class="section bg-light">
+        <h1>TIM KAMI</h1>
+        <div class="team">
+          <div class="team-member">
+               <img src="owner.jpg" alt="Foto Ardiansyah Putra">
+            <h3>Zega Aginda Rosi </h3>
+            <p>Owner & Founder</p>
+          </div>
+          <div class="team-member">
+               <img src="adelia.jpg" alt="Foto Linda Setiawan">
+            <h3>Adelia Putri </h3>
+            <p>Marketing & Customer Service</p>
+          </div>
+          <div class="team-member">
+               <img src="SANANA.jpg" alt="Foto Rizky Hidayat">
+            <h3>Tim BC CONCEPT </h3>
+            <p>Lead Teknik & Finishing</p>
+          </div>
+          <div class="team-member">
+               <img src="fre.jpg" alt="Foto Santi Widjaja">
+            <h3>Frendi Dian</h3>
+            <p>Desain & Dokumentasi</p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>
+            BANDAR CARBON CO adalah produsen bodykit karbon terkemuka di dunia yang berkantor pusat di Jakarta, Indonesia.
+            Kami membuat bodykit dari serat karbon asli. Bodykit kami pasti akan mengubah tampilan kendaraan Anda menjadi tampilan baru yang lebih modern.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="#">Beranda</a></p>
+          <p><a href="#shop-page">Toko</a></p>
+          <p><a href="#carbon-package">Paket Carbon</a></p>
+          <p><a href="#gallery-page">Galery Carbon</a></p>
+          <p><a href="#about-page">Tentang kami</a></p>
+          <p><a href="#contact-page">Contact</a></p>
+        </div>
+        <div class="footer-bottom">
+          Copyright ©2025 BANDAR CARBON CO | Made by Bikin.Website
+        </div>
+      </footer>
+    </div>
+  </div>
+  
+  <!-- Contact Page -->
+  <div id="contact-page" style="display: none;">
+    <div id="contact-page">
+      <div class="navbar">
+        <h1>BANDAR CARBON CONCEPT</h1>
+        <div class="nav-links">
+          <a href="#">Beranda</a>
+          <a href="#shop-page">Toko</a>
+          <a href="#carbon-package">Paket Carbon</a>
+          <a href="#gallery-page">Galery Carbon</a>
+          <a href="#about-page">Tentang Kami</a>
+          <a href="#contact-page" class="active">Contact</a>
+        </div>
+      </div>
+      
+      <div class="container">
+        <h2>Hubungi Kami</h2>
+        <p>Silakan isi formulir di bawah ini untuk menghubungi tim kami. Kami akan segera merespons pertanyaan Anda.</p>
+        
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Nama Lengkap</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Nomor Telepon</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subjek</label>
+              <input type="text" id="subject" name="subject" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Pesan</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Kirim Pesan</button>
+          </form>
+        </div>
+        
+        <div class="contact-info">
+          <div class="info-card">
+            <h3>Informasi Kontak</h3>
+            <p><strong>Alamat:</strong> Jl.Gunung Sepikul.01,Jawa Timur, Indonesia</p>
+            <p><strong>Telepon:</strong> +62 856 0728 5813</p>
+            <p><strong>Email:</strong> info@bandarcarbon.com</p>
+            <p><strong>Jam Operasional:</strong> Senin - Sabtu, 09:00 - 17:00 WIB</p>
+            
+            <div class="social-links">
+              <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" title="Instagram"><i class="https://www.instagram.com/"></i></a>
+              <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+          </div>
+          
+          <div class="info-card">
+            <h3>Lokasi Kami</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8191613507864!3d-6.194741395493371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5390917b759%3A0x6b45e839560a85ab!2sMonumen%20Nasional!5e0!3m2!1sen!2sid!4v1621234567890!5m2!1sen!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+      
+      <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <h3 class="font-bold text-lg mb-2">About Us</h3>
+              <p>BANDAR CARBON CO adalah produsen bodykit karbon terkemuka di dunia yang berkantor pusat di Jakarta, Indonesia. Kami membuat bodykit dari serat karbon asli. Bodykit kami pasti akan mengubah tampilan kendaraan Anda menjadi tampilan baru yang lebih modern.</p>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg mb-2">Quick Links</h3>
+              <ul class="space-y-1">
+                <li><a href="#" class="hover:underline">Beranda</a></li>
+                <li><a href="#shop-page" class="hover:underline">Toko</a></li>
+                <li><a href="#carbon-package" class="hover:underline">Paket Carbon</a></li>
+                <li><a href="#gallery-page" class="hover:underline">Galery Carbon</a></li>
+                <li><a href="#about-page" class="hover:underline">Tentang Kami</a></li>
+                <li><a href="#contact-page" class="hover:underline">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="text-center mt-6 text-xs text-gray-400">
+            Copyright ©2025 BANDAR CARBON CO | Made by Bikin.Website
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  
+  <!-- Checkout Modal -->
+  <div id="checkoutModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 class="text-2xl font-bold mb-4">Checkout Produk</h2>
+      <form id="checkoutForm">
+        <input type="hidden" id="productName" name="productName">
+        <input type="hidden" id="productPrice" name="productPrice">
+        
+        <div class="form-group">
+          <label for="customerName">Nama Lengkap</label>
+          <input type="text" id="customerName" name="customerName" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="customerEmail">Email</label>
+          <input type="email" id="customerEmail" name="customerEmail" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="customerPhone">Nomor Telepon</label>
+          <input type="tel" id="customerPhone" name="customerPhone" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="customerAddress">Alamat Pengiriman</label>
+          <textarea id="customerAddress" name="customerAddress" required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="paymentMethod">Metode Pembayaran</label>
+          <select id="paymentMethod" name="paymentMethod" required>
+            <option value="">Pilih metode pembayaran</option>
+            <option value="transfer">Transfer Bank</option>
+            <option value="cod">COD (Cash On Delivery)</option>
+            <option value="qris">QRIS</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="quantity">Jumlah</label>
+          <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+        </div>
+        
+        <div class="form-group">
+          <label>Total Harga</label>
+          <p id="totalPrice" class="text-red-600 font-bold">Rp0</p>
+        </div>
+        
+        <div class="form-group">
+          <label for="notes">Catatan (Opsional)</label>
+          <textarea id="notes" name="notes"></textarea>
+        </div>
+        
+        <button type="submit" class="checkout-btn">Proses Pesanan</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Success Modal -->
+  <div id="successModal" class="modal">
+    <div class="modal-content" style="text-align: center;">
+      <span class="close">&times;</span>
+      <div style="font-size: 60px; color: #4CAF50;">✓</div>
+      <h2 class="text-2xl font-bold mb-4">Pesanan Berhasil!</h2>
+      <p>Terima kasih telah berbelanja di BANDAR CARBON CONCEPT.</p>
+      <p>Kami akan segera menghubungi Anda untuk konfirmasi pesanan.</p>
+      <button id="backToShop" class="bg-red-600 text-white px-6 py-2 rounded mt-4">Kembali ke Toko</button>
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script>
+    // Simple routing logic
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check URL hash on page load
+      const hash = window.location.hash;
+      if(hash === '#shop-page') {
+        showPage('shop-page');
+      } else if(hash === '#carbon-package') {
+        showPage('carbon-package');
+      } else if(hash === '#gallery-page') {
+        showPage('gallery-page');
+      } else if(hash === '#about-page') {
+        showPage('about-page');
+      } else if(hash === '#contact-page') {
+        showPage('contact-page');
+      } else {
+        showPage('home-page');
+      }
+      
+      // Handle navigation clicks
+      document.querySelectorAll('a[href="#shop-page"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          showPage('shop-page');
+          window.location.hash = '#shop-page';
+        });
+      });
+      
+      document.querySelectorAll('a[href="#carbon-package"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          showPage('carbon-package');
+          window.location.hash = '#carbon-package';
+        });
+      });
+      
+      document.querySelectorAll('a[href="#gallery-page"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          showPage('gallery-page');
+          window.location.hash = '#gallery-page';
+        });
+      });
+      
+      document.querySelectorAll('a[href="#about-page"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          showPage('about-page');
+          window.location.hash = '#about-page';
+        });
+      });
+      
+      document.querySelectorAll('a[href="#contact-page"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          showPage('contact-page');
+          window.location.hash = '#contact-page';
+        });
+      });
+      
+      // Handle navigation back to home
+      document.querySelectorAll('a[href="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+          if(link.textContent === 'Beranda') {
+            e.preventDefault();
+            showPage('home-page');
+            window.location.hash = '';
+          }
+        });
+      });
+      
+      function showPage(pageId) {
+        // Hide all pages
+        document.getElementById('home-page').style.display = 'none';
+        document.getElementById('shop-page').style.display = 'none';
+        document.getElementById('carbon-package').style.display = 'none';
+        document.getElementById('gallery-page').style.display = 'none';
+        document.getElementById('about-page').style.display = 'none';
+        document.getElementById('contact-page').style.display = 'none';
+        
+        // Show the requested page
+        document.getElementById(pageId).style.display = 'block';
+      }
+      
+      // Checkout functionality
+      const modal = document.getElementById("checkoutModal");
+      const successModal = document.getElementById("successModal");
+      const closeBtns = document.querySelectorAll(".close");
+      const checkoutBtns = document.querySelectorAll(".checkout-btn");
+      const backToShopBtn = document.getElementById("backToShop");
+      const quantityInput = document.getElementById("quantity");
+      const productPriceInput = document.getElementById("productPrice");
+      const totalPriceDisplay = document.getElementById("totalPrice");
+      
+      // Open modal when checkout button is clicked
+      checkoutBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const productName = this.getAttribute('data-name');
+          const productPrice = this.getAttribute('data-price');
+          
+          document.getElementById('productName').value = productName;
+          document.getElementById('productPrice').value = productPrice;
+          document.getElementById('totalPrice').textContent = formatPrice(productPrice);
+          
+          modal.style.display = "block";
+        });
+      });
+      
+      // Close modal when X is clicked
+      closeBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          modal.style.display = "none";
+          successModal.style.display = "none";
+        });
+      });
+      
+      // Close modal when clicking outside
+      window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+        if (event.target == successModal) {
+          successModal.style.display = "none";
+        }
+      });
+      
+      // Calculate total price when quantity changes
+      quantityInput.addEventListener('input', function() {
+        const price = parseFloat(productPriceInput.value);
+        const quantity = parseInt(this.value);
+        const total = price * quantity;
+        totalPriceDisplay.textContent = formatPrice(total);
+      });
+      
+      // Handle form submission
+      document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Here you would normally send the data to your server
+        // For demo purposes, we'll just show the success modal
+        modal.style.display = "none";
+        successModal.style.display = "block";
+      });
+      
+      // Handle contact form submission
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Terima kasih telah menghubungi kami. Kami akan segera merespons pesan Anda.');
+        this.reset();
+      });
+      
+      // Back to shop button
+      backToShopBtn.addEventListener('click', function() {
+        successModal.style.display = "none";
+        showPage('shop-page');
+        window.location.hash = '#shop-page';
+      });
+      
+      // Helper function to format price
+      function formatPrice(price) {
+        return 'Rp' + parseFloat(price).toLocaleString('id-ID');
+      }
+    });
+  </script>
+</body>
+</html>
